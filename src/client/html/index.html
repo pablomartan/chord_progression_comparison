@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparació de progressions d'acords</title>
+</head>
+<body>
+    <main id="main-container">
+        <header id="main-header">
+            <h1 id="main-title">Troba progressions clàssiques al teu exemple</h1>
+        </header>
+        <section id="setup">
+            <article id="how-to">
+                <p>Aquesta aplicació inspecciona una seqüència d'acords
+                i identifica algunes de les progressions més utilitzades a la
+                música popular durant les últimes dècades. Les progressions han
+                sigut extretes d'aquest <a
+                    href="https://www.hispasonic.com/foros/armonia-pop-para-torpes/501174"
+                    target=_blank>enllaç</a>.
+                </p>
+            </article>
+            <div id="notation-selector">
+                <label for="notation-selector">Elegix notació</label>
+                <input type="radio" name="notation-selector"
+                id="am-notation-selector" value="am-not" checked="checked">Notació Americana (A, B, C)</input>
+                <input type="radio" name="notation-selector"
+                id="lat-notation-selector" value="lat-not">Notació Latina (Do, Re, Mi)</input>
+            </div>
+        </section>
+        <section class="chord-comparison">
+            <label for="chord-input-1">La teua progressió:</label>
+            <input id="chord-input-1" name="chord-input-1" placeholder="Sol Re mi Do"></input>
+            <label for="key-input-1">En quina tonalitat està la cançó?</label>
+            <input id="key-input-1" name="key-input-1" placeholder="Sol"></input>
+        </section>
+        <section class="chord-comparison">
+            <label for="chord-input-2">La teua progressió:</label>
+            <input id="chord-input-2" name="chord-input-2" placeholder="Sol Re mi Do"></input>
+            <label for="key-input-2">En quina tonalitat està la cançó?</label>
+            <input id="key-input-2" name="key-input-2" placeholder="Sol"></input>
+        </section>
+        <section class="progression-examples">
+            <div id="the-formula"></div>
+            <div id="a">
+                <div class="progression">
+                </div>
+                <div class="example-songs">
+                </div>
+            </div>
+            <div id="b">
+                <div class="progression">
+                </div>
+                <div class="example-songs">
+                </div>
+            </div>
+            <div id="c">
+                <div class="progression">
+                </div>
+                 <div class="example-songs">
+                 </div>
+            </div>
+            <div id="d">
+                <div class="progression">
+                </div>
+                <div class="example-songs">
+                </div>
+            </div>
+            <div id="e">
+                <div class="progression">
+                </div>
+                <div class="example-songs">
+                </div>
+            </div>
+            <div id="f">
+                <div class="progression">
+                </div>
+                <div class="example-songs">
+                </div>
+            </div>
+            <div id="g">
+                <div class="progression">
+                </div>
+                <div class="example-songs">
+                </div>
+            </div>
+            <div id="h">
+                <div class="progression">
+                </div>
+                <div class="example-songs">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Copyright © Pablo Martínez
+        Tot el codi d'aquesta pàgina està distribuït sota la llicència <a
+            href="https://www.gnu.org/licenses/gpl-3.0.ca.html">GPLv3</a>.
+    </footer>
+</body>
+</html>
