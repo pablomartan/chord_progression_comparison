@@ -43,14 +43,46 @@ def prog_to_funct(prog):
     """
 
     triads, prog_chromatic = [], {}
-    notes = chromatic_scale()
+    chromatic = chromatic_scale()
 
     for chord in prog:
         triads.append(chords.from_shorthand(chord))
 
-    for note in notes:
+    for note in chromatic:
         prog_chromatic[note] = []
         for chord in triads:
             prog_chromatic[note].append(progs.determine(chord, note, True))
 
     return prog_chromatic
+
+
+def prog_to_string(prog):
+    """
+    Consumes a list of lists of string s(chord progression) and returns a
+    single list of strings
+    """
+    p = []
+    for chord in prog:
+        p.append(chord[0])
+
+    return p
+
+
+def check_user_progs(user_prog):
+    """
+    Consumes a dictionary with chord progression in most common keys and
+    returns a list of matching chord progressions from the list above
+    """
+    found_progs = []
+
+    for prog in chord_progs:
+        for ch_prog in user_prog.values():
+            if prog == prog_to_string(ch_prog):
+                if prog not in found_progs:
+                    found_progs.append(prog)
+
+    return found_progs
+
+
+test_prog = ['G', 'D', 'Em', 'C']
+print(check_user_progs(prog_to_funct(test_prog)))
