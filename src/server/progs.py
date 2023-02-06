@@ -82,7 +82,3 @@ def check_user_progs(user_prog):
                     found_progs.append(prog)
 
     return found_progs
-
-
-test_prog = ['G', 'D', 'Em', 'C']
-print(check_user_progs(prog_to_funct(test_prog)))
