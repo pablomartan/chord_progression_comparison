@@ -23,7 +23,3 @@ const compareChordProg = async (e) => {
 
 const input = document.getElementById('submit');
 input.addEventListener('click', compareChordProg);
-
-export {
-    compareChordProg
-}
