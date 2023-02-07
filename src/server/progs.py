@@ -1,10 +1,12 @@
 import mingus.core.scales as scales
 import mingus.core.chords as chords
 import mingus.core.progressions as progs
+import sys
 
 chord_progs = [
         ['I', 'V', 'vi', 'IV'],
         ['I', 'vi', 'IV', 'V'],
+        ['I', 'vi', 'ii', 'V'],
         ['I', 'V', 'vi', 'iii', 'IV', 'I', 'IV', 'V'],
         ['ii', 'IV', 'V'],
         ['I', 'IV', 'V', 'IV'],
@@ -82,3 +84,7 @@ def check_user_progs(user_prog):
                     found_progs.append(prog)
 
     return found_progs
+
+
+user_args = sys.argv[1]
+print(check_user_progs(prog_to_funct(user_args.split())))
