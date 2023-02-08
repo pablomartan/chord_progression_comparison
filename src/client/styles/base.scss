@@ -1,0 +1,24 @@
+@use 'variables' as vari;
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: vari.$serif;
+    font-size: 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: vari.$sans;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+}
