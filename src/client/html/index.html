@@ -9,81 +9,30 @@
         <header id="main-header">
             <h1 id="main-title">Troba progressions clàssiques al teu exemple</h1>
         </header>
-        <section id="setup">
-            <article id="how-to">
-                <p>Aquesta aplicació inspecciona una seqüència d'acords
-                i identifica algunes de les progressions més utilitzades a la
-                música popular durant les últimes dècades. Les progressions han
-                sigut extretes d'aquest <a
-                    href="https://www.hispasonic.com/foros/armonia-pop-para-torpes/501174"
-                    target=_blank>enllaç</a>.
-                </p>
-            </article>
-            <div id="notation-selector">
+        <article id="how-to">
+            <p>Aquesta aplicació inspecciona una seqüència d'acords
+            i identifica algunes de les progressions més utilitzades a la
+            música popular durant les últimes dècades. Les progressions han
+            sigut extretes d'aquest <a
+                href="https://www.hispasonic.com/foros/armonia-pop-para-torpes/501174"
+                target=_blank>enllaç</a>.
+            </p>
+        </article>
+        <section id="forms">
+            <form id="notation-selector">
                 <label for="notation-selector">Elegix notació</label>
                 <input type="radio" name="notation-selector"
                 id="am-notation-selector" value="am-not" checked="checked">Notació Americana (A, B, C)</input>
                 <input type="radio" name="notation-selector"
                 id="lat-notation-selector" value="lat-not">Notació Latina (Do, Re, Mi)</input>
-            </div>
-        </section>
-        <form class="chord-comparison">
-            <label for="chord-input">La teua progressió:</label>
-            <input id="chord-input" name="chord-input-1" placeholder="Sol Re Mim Do" />
-            <label for="key-input">En quina tonalitat està la cançó?</label>
-            <input id="key-input" name="key-input-1" placeholder="Sol" />
-            <input id="submit" type="submit" value="Envia!" />
-        </form>
-        <section class="progression-examples">
-            <div id="the-formula"></div>
-            <div id="a">
-                <div class="progression">
-                </div>
-                <div class="example-songs">
-                </div>
-            </div>
-            <div id="b">
-                <div class="progression">
-                </div>
-                <div class="example-songs">
-                </div>
-            </div>
-            <div id="c">
-                <div class="progression">
-                </div>
-                 <div class="example-songs">
-                 </div>
-            </div>
-            <div id="d">
-                <div class="progression">
-                </div>
-                <div class="example-songs">
-                </div>
-            </div>
-            <div id="e">
-                <div class="progression">
-                </div>
-                <div class="example-songs">
-                </div>
-            </div>
-            <div id="f">
-                <div class="progression">
-                </div>
-                <div class="example-songs">
-                </div>
-            </div>
-            <div id="g">
-                <div class="progression">
-                </div>
-                <div class="example-songs">
-                </div>
-            </div>
-            <div id="h">
-                <div class="progression">
-                </div>
-                <div class="example-songs">
-                </div>
-            </div>
+            </form>
+            <form id="chord-comparison">
+                <label for="chord-input">La teua progressió:</label>
+                <input id="chord-input" name="chord-input-1" placeholder="Sol Re Mim Do" />
+                <label for="key-input">En quina tonalitat està la cançó?</label>
+                <input id="key-input" name="key-input-1" placeholder="Sol" />
+                <input id="submit" type="submit" value="Envia!" />
+            </form>
         </section>
     </main>
     <footer>
