@@ -1,0 +1,11 @@
+@use 'variables' as vari;
+
+#how-to {
+    p {
+        width: 75%;
+        margin: 60px auto;
+        line-height: 2;
+    }
+
+    background-color: vari.$sunset;
+}
