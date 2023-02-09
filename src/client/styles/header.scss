@@ -1,0 +1,17 @@
+@use 'variables' as vari;
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background: vari.$cambridge-blue;
+    text-align: center;
+
+    h1 {
+        width: 75%;
+        font-size: 2.5em;
+        padding: 20px;
+    }
+}
