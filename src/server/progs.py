@@ -89,8 +89,8 @@ def prog_to_string(prog):
 
 def check_user_progs(user_prog):
     """
-    Consumes a dictionary with chord progression in most common keys and
-    returns a list of matching chord progressions from the list above
+    Consumes a list with chords from the user and returns 
+    a list of matching chord progressions from the dictionary above
     """
     found_progs = []
 
