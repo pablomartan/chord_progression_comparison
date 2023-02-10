@@ -1,20 +1,21 @@
 import mingus.core.scales as scales
 import mingus.core.chords as chords
 import mingus.core.progressions as progs
+import json
 import sys
 
 chord_progs = [
-        ['I', 'V', 'vi', 'IV'],
-        ['I', 'vi', 'IV', 'V'],
-        ['I', 'vi', 'ii', 'V'],
-        ['I', 'V', 'vi', 'iii', 'IV', 'I', 'IV', 'V'],
-        ['ii', 'IV', 'V'],
-        ['I', 'IV', 'V', 'IV'],
-        ['V', 'IV', 'I'],
-        ['vi', 'IV', 'I', 'V'],
-        ['vi', 'V', 'IV', 'III'],
-        ['IV',  'V',  'I'],
-        ['ii',  'V',  'I']
+        ["I", "V", "vi", "IV"],
+        ["I", "vi", "IV", "V"],
+        ["I", "vi", "ii", "V"],
+        ["I", "V", "vi", "iii", "IV", "I", "IV", "V"],
+        ["ii", "IV", "V"],
+        ["I", "IV", "V", "IV"],
+        ["V", "IV", "I"],
+        ["vi", "IV", "I", "V"],
+        ["vi", "V", "IV", "III"],
+        ["IV",  "V",  "I"],
+        ["ii",  "V",  "I"]
         ]
 
 
@@ -23,8 +24,8 @@ def chromatic_scale():
     This function returns the chromatic scale starting with C and including
     its enharmonics
     """
-    ascending_chrom = scales.Chromatic('C').ascending()
-    descending_chrom = scales.Chromatic('C').descending()
+    ascending_chrom = scales.Chromatic("C").ascending()
+    descending_chrom = scales.Chromatic("C").descending()
     chrom = []
 
     for note in ascending_chrom:
@@ -87,4 +88,4 @@ def check_user_progs(user_prog):
 
 
 user_args = sys.argv[1]
-print(check_user_progs(prog_to_funct(user_args.split())))
+print(json.dumps(check_user_progs(prog_to_funct(user_args.split()))))
