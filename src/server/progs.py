@@ -4,19 +4,35 @@ import mingus.core.progressions as progs
 import json
 import sys
 
-chord_progs = [
-        ["I", "V", "vi", "IV"],
-        ["I", "vi", "IV", "V"],
-        ["I", "vi", "ii", "V"],
-        ["I", "V", "vi", "iii", "IV", "I", "IV", "V"],
-        ["ii", "IV", "V"],
-        ["I", "IV", "V", "IV"],
-        ["V", "IV", "I"],
-        ["vi", "IV", "I", "V"],
-        ["vi", "V", "IV", "III"],
-        ["IV",  "V",  "I"],
-        ["ii",  "V",  "I"]
-        ]
+chord_progs = {
+        "I V vi IV": [("Enrique Iglesias", "Bailando"),
+                      ("Bob Marley", "No woman no cry"),
+                      ("The Beatles", "Let it be")],
+        "I ii vi IV": [("Beyonce", "Halo"),
+                       ("Rihanna", "Stay"),
+                       ("Katy Perry", "Firework")],
+        "I iii vi IV": [("Jessie J", "Pricetag"),
+                        ("Blow me", "Pink"),
+                        ("Count on me", "Bruno Mars")],
+        "I vi IV V": [("Ben E. King", "Stand By Me"),
+                      ("Sean Kingston", "Beautiful girls"),
+                      ("Justin Bieber", "Baby")],
+        "I IV V IV": [("Ritchie Valens", "La bamba")],
+        "I V ii IV": [("Hot n cold", "Katy Perry"),
+                      ("Lady Gaga", "Eh Eh"),
+                      ("On my way", "Charlie Brown"),
+                      ("Foster the people", "Pumped up kicks")],
+        "ii IV I V": [("Paradise", "Coldplay")],
+        "IV I V vi": [("Rihanna", "Umbrella"),
+                      ("Grenday", "Boulevard of broken dreams"),
+                      ("Passenger", "Let her go")],
+        "I V vi iii IV I IV V": [("Oasis", "Don't look back in anger"),
+                                 ("Maroon 5", "Memories"),
+                                 ("David Bowie", "Changes")],
+        "V IV I": [("Guns 'n' roses", "Sweet child o mine"),
+                   ("The eagles", "Sweet home, Alabama")],
+        "vi IV I V": [("Red Hot Chilly Peppers", "Snow")]
+        }
 
 
 def chromatic_scale():
@@ -78,14 +94,15 @@ def check_user_progs(user_prog):
     """
     found_progs = []
 
-    for prog in chord_progs:
+    progs = [prog.split() for prog in chord_progs.keys()]
+
+    for prog in progs:
         for ch_prog in user_prog.values():
             if prog == prog_to_string(ch_prog):
                 if prog not in found_progs:
-                    found_progs.append(prog)
+                    found_progs.append(chord_progs[' '.join(prog)])
 
     return found_progs
-
 
 user_args = sys.argv[1]
 print(json.dumps(check_user_progs(prog_to_funct(user_args.split()))))
