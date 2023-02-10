@@ -20,7 +20,7 @@ const updateUI = progs => {
     
     if (document.getElementsByClassName('section-title').length <= 0 ) {
         const sectTitle = document.createElement('h3');
-        sectTitle.innerText = 'Matching chord progressions:'
+        sectTitle.innerText = 'Progressions trobades';
         sectTitle.classList.add('section-title');
         progSect.appendChild(sectTitle);
     }
