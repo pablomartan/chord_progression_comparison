@@ -15,7 +15,16 @@ You will need [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/
 Once you have them installed navigate to the repo you cloned this repo on and
 run the following command to install dependencies (Webpack and some plugins for
 it):
-`npm i`
+`npm i`.
+
+You will need a python environment. Refer to [this
+site](https://wiki.python.org/moin/BeginnersGuide/Download) if you don't know
+how to achieve it. If you use a GNU/Linux distro search your package manager
+for python3, altough it probably is already installed on you system. You will
+also need `pip` to install the [mingus library](https://github.com/bspaans/python-mingus).
+To install `pip` refer to its
+[docs](https://pip.pypa.io/en/stable/installation/). Once installed, you can
+get mingus by running `pip install mingus` on a terminal.
 
 Once you have it set up you can run `npm run build-prod` and `npm start` to get
 a working example on `http://localhost:8081`. You can then access it on your
