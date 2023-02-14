@@ -90,18 +90,21 @@ def prog_to_string(prog):
 
 def check_user_progs(user_prog):
     """
-    Consumes a list with chords from the user and returns
-    a list of matching chord progressions from the dictionary above
+    Consumes a dictionary with this structure {MUSIC_KEY: [CHORD_PROGRESSION]},
+    with the user chord progression in functional notation for every key in the
+    C chromatic scale. It then checks for every chord progression and tries to
+    find it on the 'popular' chord progressions dictionary declared above
     """
-    found_progs = []
+    found_progs = {}
 
     progs = [prog.split() for prog in chord_progs.keys()]
 
     for prog in progs:
-        for ch_prog in user_prog.values():
-            if prog == prog_to_string(ch_prog):
-                if prog not in found_progs:
-                    found_progs.append(prog)
+        for key in user_prog:
+            string = prog_to_string(user_prog[key])
+            if prog == string:
+                if string not in found_progs.values():
+                    found_progs[key] = string
 
     return found_progs
 
@@ -120,17 +123,18 @@ def songs_to_dict(list_of_songs):
     return new_list
 
 
-def prepare_output(key_list):
+def prepare_output(prog_dict):
     """
-    Consumes a list with keys for the dictionary above and returns a formated
-    list with the chord progression and a list of songs that use it
+    Consumes a dictionary with a chord progression for each key in which it
+    found one: { MUSIC_KEY: [CHORD PROGRESSION] }
     """
     output = []
-    for key in key_list:
+    for key in prog_dict:
+        prog = ' '.join(prog_dict[key])
         item = {}
-        tmp_key = ' '.join(key)
-        item['prog'] = tmp_key
-        item['songs'] = songs_to_dict(chord_progs[tmp_key])
+        item['key'] = key
+        item['prog'] = prog
+        item['songs'] = songs_to_dict(chord_progs[prog])
         output.append(item)
 
     return output
