@@ -23,6 +23,32 @@ const amToLatDict = () => {
 };
 
 /**
+ * @description: checks if chord notation matches selected option in radio
+ * button
+ * @param {String} not: the selected notation
+ * @param {String} chords: the chords input by the user
+ */
+const notationMatchesInput = (not, chords) => {
+    chords = chords.split(' ');
+    let keys;
+    if (not == 'lat-not') {
+        keys = Object.keys(latToAmDict);
+        console.log(keys);
+    } else if (not == 'am-not') {
+        const dict = amToLatDict();
+        keys = Object.keys(dict);
+        console.log(keys);
+    }
+    chords.forEach(chord => {
+        const noteName = chord.replace(/([m,d,0-9])/, '');
+        if (!keys.includes(noteName)) {
+            window.alert('Els acords no estan en la notació que has seleccionat!');
+            throw new Error(`Given chords didn't match notation. Notation: ${not}; Chords ${chords}`)
+        }
+    });
+};
+
+/**
  * @description: this function translates chords from latin to american
  * notation 
  * @param {Array} chords: an array of strings, each one is a chord
