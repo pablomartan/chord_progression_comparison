@@ -18,6 +18,7 @@ const compareChordProg = async (e) => {
 
     const notation = getNotation();
     const userProg = document.getElementById('chord-input').value.trim();
+    Client.notationMatchesInput(notation, userProg);
     
     let body;
     notation == 'lat-not' ? body = { prog: Client.translateChords(userProg) } : body = { prog: userProg }
