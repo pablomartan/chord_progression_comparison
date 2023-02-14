@@ -14,7 +14,6 @@ const createSection = () => {
  * @param {Array} progs: the list of chord progressions
  */
 const updateUI = progs => {
-    console.log(progs);
     const progSect = document.getElementById('matching-chord-progs') || createSection();
     const footerCollect = document.getElementsByTagName('footer');
     const footer = footerCollect[0];
