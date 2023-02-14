@@ -1,5 +1,6 @@
 import { updateUI } from './js/updateUI'
 import { compareChordProg } from './js/app'
+import { translateChords } from './js/changeNotation'
 
 import vari from './styles/_variables.scss'
 import base from './styles/base.scss'
@@ -10,7 +11,8 @@ import form from './styles/form.scss'
 
 export {
     updateUI,
-    compareChordProg
+    compareChordProg,
+    translateChords
 }
 
 const input = document.getElementById('submit');

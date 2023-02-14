@@ -5,12 +5,23 @@
  */
 const compareChordProg = async (e) => {
     e.preventDefault();
-    const notation = document.getElementById('notation-selector').value;
+    const getNotation = () => {
+        const radioGroup = document.getElementsByName('notation-selector');
+        let select = '';
+        radioGroup.forEach(radio => {
+            if (radio.checked) {
+                select = radio.value;
+            }
+        });
+        return select;
+    };
+
+    const notation = getNotation();
     const userProg = document.getElementById('chord-input').value.trim();
+    
     let body;
-
-    notation != 'am-not' ? body = { prog: Client.translateChords(userProg) } : body = userProg;
-
+    notation == 'lat-not' ? body = { prog: Client.translateChords(userProg) } : body = { prog: userProg }
+    
     const chordProgressions = await fetch('http://localhost:8081/find', {
         method: 'POST',
         credentials: 'same-origin',
