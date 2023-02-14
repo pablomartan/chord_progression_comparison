@@ -33,11 +33,8 @@ const notationMatchesInput = (not, chords) => {
     let keys;
     if (not == 'lat-not') {
         keys = Object.keys(latToAmDict);
-        console.log(keys);
     } else if (not == 'am-not') {
-        const dict = amToLatDict();
-        keys = Object.keys(dict);
-        console.log(keys);
+        keys = Object.keys(amToLatDict());
     }
     chords.forEach(chord => {
         const noteName = chord.replace(/([m,d,0-9])/, '');
