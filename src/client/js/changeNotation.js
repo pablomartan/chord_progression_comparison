@@ -15,11 +15,11 @@ const latToAmDict = {
 
 const amToLatDict = () => {
     const map = {}
-    for (const key in latToAm) {
-        const value = latToAm[key];
+    for (const key in latToAmDict) {
+        const value = latToAmDict[key];
         map[value] = key;
     }
-    
+    console.log(map); 
     return map;
 };
 
@@ -47,7 +47,8 @@ const latToAm = (chords) => {
  */
 const amToLat = chords => {
     const newNames = chords.map(chord => {
-        return amToLatDict[chord.slice(0, 1)] + chord.slice(1);
+        const dict = amToLatDict();
+        return dict[chord.slice(0, 1)] + chord.slice(1);
     });
 
     return newNames;
@@ -67,5 +68,6 @@ const translateChords = (chords, opt) => {
 };
 
 export {
-    translateChords
+    translateChords,
+    notationMatchesInput
 }
