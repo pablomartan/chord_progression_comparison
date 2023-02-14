@@ -19,7 +19,6 @@ const amToLatDict = () => {
         const value = latToAmDict[key];
         map[value] = key;
     }
-    console.log(map); 
     return map;
 };
 
