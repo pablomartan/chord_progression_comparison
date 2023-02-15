@@ -78,7 +78,7 @@ def prog_to_funct(prog):
 
 def prog_to_string(prog):
     """
-    Consumes a list of lists of string s(chord progression) and returns a
+    Consumes a list of lists of strings (chord progression) and returns a
     single list of strings
     """
     p = []
@@ -101,10 +101,10 @@ def check_user_progs(user_prog):
 
     for prog in progs:
         for key in user_prog:
-            string = prog_to_string(user_prog[key])
-            if prog == string:
-                if string not in found_progs.values():
-                    found_progs[key] = string
+            to_string = prog_to_string(user_prog[key])
+            if prog == to_string:
+                if to_string not in found_progs.values():
+                    found_progs[key] = to_string
 
     return found_progs
 
