@@ -23,25 +23,6 @@ const createSectTitle = sect => {
 };
 
 /**
- * @description: in case the progression wasn't already found in that key, it
- * adds it to the list of keys. In either case, it takes that progression to
- * the first place in the section
- * @param {String} key: the key of the progression
- * @param {String} prog: the progression
- */
-const handleKey = (key, prog) => {
-    const progDiv = document.getElementById(prog);
-    const keyList = progDiv.getElementsByClassName('key-list')[0].split(', ');
-    if (!keyList.includes(key)) {
-        keyList.append(key);
-    }
-
-    keyList = keyList.join(', ');
-
-    firstDiv(progDiv);
-};
-
-/**
  * @description: takes a list of chord progressions and displays them on the UI
  * @param {Array} progs: the list of chord progressions
  */
