@@ -8,6 +8,20 @@ const createSection = () => {
     
     return newSect;
 };
+
+/**
+ * @description: creates a title for the matching progressions section
+ * @param {HTMLElement} sect: the section to create the title for
+ */
+const createSectTitle = sect => {
+    if (sect.getElementsByTagName('h2').length <= 0) {
+        const sectTitle = document.createElement('h2');
+        sectTitle.innerText = 'Progressions trobades';
+        sectTitle.classList.add('section-title');
+        progSect.appendChild(sectTitle);
+    }
+};
+
 /**
  * @description: takes a list of chord progressions and displays them on the UI
  * @param {Array} progs: the list of chord progressions
@@ -15,6 +29,8 @@ const createSection = () => {
 const updateUI = progs => {
     const progSect = document.getElementById('matching-chord-progs') || createSection();
     const footer = document.getElementsByTagName('footer')[0];
+    
+    createSectTitle(progSect);
     
     document.body.insertBefore(progSect, footer);        
 };
