@@ -32,6 +32,17 @@ const updateUI = progs => {
     
     createSectTitle(progSect);
     
+    progs.forEach(prog => {
+        const foundProg = prog['prog'];
+        const key = prog['key'];
+        const songList = prog['songs'];
+
+        handleProg(prog);
+        handleKey(key, foundProg);
+        handleSongs(songList, foundProg);
+        
+    }); 
+    
     document.body.insertBefore(progSect, footer);        
 };
 
