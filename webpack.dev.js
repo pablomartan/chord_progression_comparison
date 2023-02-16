@@ -30,6 +30,14 @@ module.exports = {
             template: './src/client/html/index.html',
             filename: './index.html'
         }),
+        new HtmlWebPackPlugin({
+            template: './src/client/html/prog_generator.html',
+            filename: 'prog_generator.html'
+        }),
+        new HtmlWebPackPlugin({
+            template: './src/client/html/prog_analyzer.html',
+            filename: 'prog_analyzer.html'
+        }),
 
         new CleanWebpackPlugin({
             dry: true,
