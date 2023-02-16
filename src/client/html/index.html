@@ -2,51 +2,19 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <title>Comparació de progressions d'acords</title>
+    <title>Ferramentes per a l'harmonia</title>
 </head>
 <body>
-    <main id="main-container">
-        <header id="main-header">
-            <h1 id="main-title">Troba progressions clàssiques al teu exemple</h1>
-        </header>
-        <article id="how-to">
-            <p>Aquesta aplicació inspecciona una seqüència d'acords
-            i identifica algunes de les progressions més utilitzades a la
-            música popular durant les últimes dècades. Les progressions han
-            sigut extretes d'aquest <a
-                href="https://www.hispasonic.com/foros/armonia-pop-para-torpes/501174"
-                target=_blank>enllaç</a>.
-            </p>
-        </article>
-        <section id="forms">
-            <form id="notation-selector">
-                <label for="notation-selector">Elegix notació</label>
-                <br>
-                <input type="radio" name="notation-selector"
-                id="am-notation-selector" value="am-not" checked="checked">Notació Americana (A, B, C)</input>
-                <br>
-                <input type="radio" name="notation-selector"
-                id="lat-notation-selector" value="lat-not">Notació Latina (Do, Re, Mi)</input>
-                <br>
-            </form>
-            <form id="chord-comparison">
-                <label for="chord-input">La teua progressió:</label>
-                <input id="chord-input" name="chord-input-1" placeholder="Sol Re Mim Do" />
-                <br>
-                <label for="key-input">En quina tonalitat està la cançó?</label>
-                <input id="key-input" name="key-input-1" placeholder="Sol" />
-                <br>
-                <input id="submit" type="submit" value="Envia!" />
-            </form>
+    <main>
+        <header id="main-header"></header>
+        <section>
+            <div id="generator">
+                <a href="./prog_generator.html">Generador de progressions</a>
+            </div>
+            <div id="analyzer">
+                <a href="./prog_analyzer.html">Analitzador de progressions</a>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>
-            Copyright © Pablo Martínez
-        </p>
-        <p>
-            Tot el codi d'aquesta pàgina està distribuït sota la llicència <a href="https://www.gnu.org/licenses/gpl-3.0.ca.html">GPLv3</a>.
-        </p>
-    </footer>
 </body>
 </html>
