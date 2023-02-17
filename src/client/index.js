@@ -8,6 +8,7 @@ import header from './styles/header.scss'
 import main from './styles/main.scss'
 import footer from './styles/footer.scss'
 import form from './styles/form.scss'
+import homePage from './styles/home-page.scss'
 
 export {
     updateUI,
