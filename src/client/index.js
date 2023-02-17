@@ -17,5 +17,7 @@ export {
     notationMatchesInput
 }
 
-const input = document.getElementById('submit');
-input.addEventListener('click', compareChordProg);
+if (typeof(document.getElementsByName('notation-selector')).length > 0) {
+    const input = document.getElementById('submit');
+    input.addEventListener('click', compareChordProg);
+}
