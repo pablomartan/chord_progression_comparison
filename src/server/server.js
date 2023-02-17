@@ -19,7 +19,19 @@ app.post('/find', (req, res) => {
     
     result.stdout.on('data', data => {
         const parsedData = data.toString();
-        console.log('Sending data: ' + parsedData);
+        res.send(JSON.stringify(parsedData));
+    });
+});
+
+app.get('/gen_prog', (req, res) => {
+    const progList = spawn('python3', ['src/server/prog_list.py']);
+
+    progList.stderr.on('data', data => {
+        console.log('Error: ' + data.toString());
+    });
+
+    progList.stdout.on('data', data => {
+        const parsedData = data.toString();
         res.send(JSON.stringify(parsedData));
     });
 });
