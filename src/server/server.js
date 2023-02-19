@@ -45,7 +45,7 @@ app.post('/gen_prog', (req, res) => {
     
     generateProgression.stdout.on('data', data => {
         const parsedData = data.toString();
-        res.send(JSON.stringify(parsedData));
+        res.send(parsedData);
     });
 });
 
