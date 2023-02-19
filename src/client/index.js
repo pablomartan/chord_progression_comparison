@@ -1,6 +1,7 @@
 import { updateUI } from './js/updateUI'
 import { compareChordProg } from './js/app'
 import { translateChords, notationMatchesInput } from './js/changeNotation'
+import { populateSelector } from './js/chordGen'
 
 import vari from './styles/_variables.scss'
 import base from './styles/base.scss'
@@ -14,10 +15,14 @@ export {
     updateUI,
     compareChordProg,
     translateChords,
-    notationMatchesInput
+    notationMatchesInput,
+    populateSelector
 }
 
-if (typeof(document.getElementsByName('notation-selector')).length > 0) {
+const titleFirstWord = document.title.split(' ')[0];
+
+if (titleFirstWord == 'Comparació') {
     const input = document.getElementById('submit');
     input.addEventListener('click', compareChordProg);
 }
+
