@@ -2,7 +2,9 @@
  * @description: get selected progression and key, and send it to the server
  * for processing
  */
-const transposeProgression = async () => {
+const transposeProgression = async e => {
+    e.preventDefault();
+
     const selector = document.getElementById('prog-selector');
     const keyInput = document.getElementById('key');
     const prog = selector.value;
