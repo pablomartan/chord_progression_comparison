@@ -23,6 +23,20 @@ const amToLatDict = () => {
 };
 
 /**
+ * @description: gets the selected notation
+ */
+const getNotation = () => {
+    const radioGroup = document.getElementsByName('notation-selector');
+    let select = '';
+    radioGroup.forEach(radio => {
+        if (radio.checked) {
+            select = radio.value;
+        }
+    });
+    return select;
+};
+
+/**
  * @description: checks if chord notation matches selected option in radio
  * button
  * @param {String} not: the selected notation
@@ -90,6 +104,7 @@ const translateChords = (chords, opt) => {
 };
 
 export {
+    getNotation,
     translateChords,
     notationMatchesInput
 }

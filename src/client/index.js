@@ -1,7 +1,7 @@
 import { updateUI } from './js/updateUI'
 import { compareChordProg } from './js/app'
-import { translateChords, notationMatchesInput } from './js/changeNotation'
-import { populateSelector } from './js/chordGen'
+import { getNotation, translateChords, notationMatchesInput } from './js/changeNotation'
+import { populateSelector, transposeProgression } from './js/chordGen'
 
 import vari from './styles/_variables.scss'
 import base from './styles/base.scss'
@@ -14,9 +14,11 @@ import homePage from './styles/home-page.scss'
 export {
     updateUI,
     compareChordProg,
+    getNotation,
     translateChords,
     notationMatchesInput,
-    populateSelector
+    populateSelector,
+    transposeProgression
 }
 
 const titleFirstWord = document.title.split(' ')[0];

@@ -5,18 +5,8 @@
  */
 const compareChordProg = async (e) => {
     e.preventDefault();
-    const getNotation = () => {
-        const radioGroup = document.getElementsByName('notation-selector');
-        let select = '';
-        radioGroup.forEach(radio => {
-            if (radio.checked) {
-                select = radio.value;
-            }
-        });
-        return select;
-    };
 
-    const notation = getNotation();
+    const notation = Client.getNotation();
     const userProg = document.getElementById('chord-input').value.trim();
     Client.notationMatchesInput(notation, userProg);
     
