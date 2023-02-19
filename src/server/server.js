@@ -36,6 +36,19 @@ app.get('/get_prog', (req, res) => {
     });
 });
 
+app.post('/gen_prog', (req, res) => {
+    const generateProgression = spawn('python3', ['src/server/gen_prog.py', req.body]);
+
+    generateProgression.stderr.on('data', data => {
+        console.log('Error: ' + data.toString());
+    });
+    
+    generateProgression.stdout.on('data', data => {
+        const parsedData = data.toString();
+        res.send(JSON.stringify(parsedData));
+    });
+});
+
 app.listen(port, () => {
     console.log('Running on port ' + port);
 });
