@@ -2,17 +2,24 @@
  * @description: get selected progression and key, and send it to the server
  * for processing
  */
-const transposeProgression = () => {
+const transposeProgression = async () => {
     const selector = document.getElementById('prog-selector');
     const keyInput = document.getElementById('key');
     const prog = selector.value;
-    const key = keyInput.value;
+    let key = keyInput.value;
+    const notation = Client.getNotation();
+
+    if (Client.notationMatchesInput(notation, key) == 0) {
+    } else if (notation == 'lat-not') {
+        key = Client.translateChords(key);
+    }
+
     const body = {
         'prog': prog,
         'key': key
     };
 
-    const transposed = fetch('http://localhost:8081/gen_prog', {
+    const transposed = await fetch('http://localhost:8081/gen_prog', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -21,8 +28,13 @@ const transposeProgression = () => {
         body: JSON.stringify(body)
     })
     .then(data => data.json())
+    .then(chordList => chordList.join(' '))
 
-    console.log(transposed);
+    if (notation == 'lat-not') {
+        return Client.translateChords(transposed, 1).join(' ')
+    } else {
+       return transposed
+    }
 };
 
 /**
