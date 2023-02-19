@@ -47,17 +47,20 @@ const notationMatchesInput = (not, chords) => {
     let keys;
     if (not == 'lat-not') {
         keys = Object.keys(latToAmDict);
-    } else if (not == 'am-not') {
+    } else {
         keys = Object.keys(amToLatDict());
     }
+
+    let matches = 1;
+
     chords.forEach(chord => {
         const noteName = chord.replace(/([m,#,b,0-9]*[m,d,#,b,0-9])/, '');
         if (!keys.includes(noteName)) {
-            return false;
+            matches = 0;
         }
     });
 
-    return true;
+    return matches;
 };
 
 /**
