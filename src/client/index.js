@@ -20,9 +20,11 @@ export {
 }
 
 const titleFirstWord = document.title.split(' ')[0];
+console.log(titleFirstWord);
 
 if (titleFirstWord == 'Comparació') {
     const input = document.getElementById('submit');
     input.addEventListener('click', compareChordProg);
+} else if (titleFirstWord == 'Generador') {
+    window.addEventListener('DOMContentLoaded', populateSelector);
 }
-
