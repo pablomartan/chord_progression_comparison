@@ -133,7 +133,7 @@ const updateUI = progs => {
  * @param {String} prog: the chord progression
  */
 const displayTranspChords = prog => {
-    const sect = document.getElementById('tranposed-chords') || createEl('section', 'tranposed-chords', 'prog-container');
+    const sect = document.getElementById('transposed-chords') || createEl('section', 'transposed-chords', 'prog-container');
     const sectDivs = Array.from(sect.getElementsByTagName('div'));
 
     if (sect.getElementsByTagName('h2').length <= 0) {
