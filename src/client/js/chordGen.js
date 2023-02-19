@@ -29,12 +29,15 @@ const transposeProgression = async () => {
     })
     .then(data => data.json())
     .then(chordList => chordList.join(' '))
-
+    
+    let chordsInUserNotation;
     if (notation == 'lat-not') {
-        return Client.translateChords(transposed, 1).join(' ')
+        chordsInUserNotation = Client.translateChords(transposed, 1).join(' ');
     } else {
-       return transposed
+        chordsInUserNotation = transposed;
     }
+    
+    Client.displayTranspChords(chordsInUserNotation.replace(/\B[M\s]/g, ' '));
 };
 
 /**

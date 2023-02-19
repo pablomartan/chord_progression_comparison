@@ -128,6 +128,34 @@ const updateUI = progs => {
     document.body.insertBefore(progSect, footer);        
 };
 
+/**
+ * @description: display transported chord progression on the page
+ * @param {String} prog: the chord progression
+ */
+const displayTranspChords = prog => {
+    const sect = document.getElementById('tranposed-chords') || createEl('section', 'tranposed-chords', 'prog-container');
+    const sectDivs = Array.from(sect.getElementsByTagName('div'));
+
+    if (sect.getElementsByTagName('h2').length <= 0) {
+        const newTitle = createEl('h2', null, 'section-title');
+        newTitle.innerText = 'La teua progressió';
+        sect.appendChild(newTitle);
+    }
+  
+    if (sectDivs.length > 0) {
+        sectDivs.forEach(div => {
+            div.remove();
+        });
+    }
+
+    const chordProg = createEl('div', null, 'chord-prog');
+    chordProg.innerText = prog;
+    sect.appendChild(chordProg);
+
+    document.getElementsByTagName('main')[0].appendChild(sect);
+};
+
 export {
-    updateUI
+    updateUI,
+    displayTranspChords
 }
