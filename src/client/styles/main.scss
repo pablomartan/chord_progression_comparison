@@ -1,6 +1,11 @@
 @use 'variables' as vari;
 
 #how-to {
+    h2 {
+        width: 75%;
+        margin: 30px auto;
+    }
+
     p {
         width: 75%;
         margin: 60px auto;
@@ -12,6 +17,18 @@
 
 #matching-chord-progs {
     width: 85%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: vari.$eggshell;
+}
+
+#gen-chords {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    width: 60%;
     margin: 20px auto;
     padding: 10px;
     background-color: vari.$eggshell;
