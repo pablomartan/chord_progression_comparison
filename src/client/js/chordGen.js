@@ -12,17 +12,17 @@ const transposeProgression = () => {
         'key': key
     };
 
-    const transposedProgression = fetch('http://localhost:8081/gen_prog', {
-                method: 'POST',
-                credentials: 'same-origin',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            })
-            .then(async data => await data.json())
+    const transposed = fetch('http://localhost:8081/gen_prog', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    })
+    .then(data => data.json())
 
-    console.log(transposedProgression);
+    console.log(transposed);
 };
 
 /**
