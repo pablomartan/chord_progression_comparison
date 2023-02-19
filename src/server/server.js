@@ -23,7 +23,7 @@ app.post('/find', (req, res) => {
     });
 });
 
-app.get('/gen_prog', (req, res) => {
+app.get('/get_prog', (req, res) => {
     const progList = spawn('python3', ['src/server/prog_list.py']);
 
     progList.stderr.on('data', data => {
