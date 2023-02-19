@@ -37,7 +37,7 @@ app.get('/get_prog', (req, res) => {
 });
 
 app.post('/gen_prog', (req, res) => {
-    const generateProgression = spawn('python3', ['src/server/gen_prog.py', req.body]);
+    const generateProgression = spawn('python3', ['src/server/gen_prog.py', JSON.stringify(req.body)])
 
     generateProgression.stderr.on('data', data => {
         console.log('Error: ' + data.toString());
