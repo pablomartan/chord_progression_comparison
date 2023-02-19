@@ -53,10 +53,11 @@ const notationMatchesInput = (not, chords) => {
     chords.forEach(chord => {
         const noteName = chord.replace(/([m,#,b,0-9]*[m,d,#,b,0-9])/, '');
         if (!keys.includes(noteName)) {
-            window.alert('Els acords no estan en la notació que has seleccionat!');
-            throw new Error(`Given chords didn't match notation. Notation: ${not}; Chords ${chords}`)
+            return false;
         }
     });
+
+    return true;
 };
 
 /**
