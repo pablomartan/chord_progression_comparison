@@ -8,9 +8,9 @@ const compareChordProg = async (e) => {
 
     const notation = Client.getNotation();
     const userProg = document.getElementById('chord-input').value.trim();
-    if (!Client.notationMatchesInput(notation, userProg)) {
+    if (Client.notationMatchesInput(notation, userProg) == 0) {
         window.alert('Els acords no estan en la notació que has seleccionat!');
-        throw new Error(`Given chords didn't match notation. Notation: ${not}; Chords ${chords}`)
+        throw new Error(`Given chords didn't match notation. Notation: ${notation}; Chords ${userProg}`)
     }
     
     let body;
