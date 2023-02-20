@@ -49,6 +49,18 @@ app.post('/gen_prog', (req, res) => {
     });
 });
 
+app.get('/', (req, res) => {
+    res.sendFile('dist/index.html');
+});
+
+app.get('/prog_analyzer', (req, res) => {
+    res.sendFile('dist/prog_analyzer.html');
+});
+
+app.get('/prog_generator', (req, res) => {
+    res.sendFile('dist/prog_generator.html');
+});
+
 app.listen(port, () => {
     console.log('Running on port ' + port);
 });
