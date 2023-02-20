@@ -8,7 +8,7 @@ const port = 8081;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('/dist'));
+app.use(express.static('dist'));
 
 app.post('/find', (req, res) => {
     const result = spawn('python3', ['src/server/progs.py', req.body.prog]);
