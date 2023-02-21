@@ -28,19 +28,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    height: 27vh;
+    background-size: cover;
+    background-position: center;
 }
 
 #generator {
     //https://pixabay.com/photos/ukulele-music-instrument-923482/
     background-image: url("../media/uke.jpg");
-    background-size: cover;
-    height: 200px;
 }
 
 #analyzer {
     //https://pixabay.com/photos/piano-sheet-music-music-keyboard-1655558/
     background-image: url("../media/harmony.jpg");
-    background-size: cover;
 }
 
