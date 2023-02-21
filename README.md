@@ -17,11 +17,11 @@ register.
 This app was originally made to be used by my highschool students, and so it is
 completely in valencian. Here are some pics:
 
-![Home Page](shots/home.png)
-![Analyzer Explanation](shots/an-expl.png)
-![Analyzer Results](shots/an-res.png)
-![Generator Explanation](shots/gen-expl.png)
-![Generator Results](shots/gen-res.png)
+![Home Page](shots/home.png){width: 50%;}
+![Analyzer Explanation](shots/an-expl.png){width: 50%;}
+![Analyzer Results](shots/an-res.png){width: 50%;}
+![Generator Explanation](shots/gen-expl.png){width: 50%;}
+![Generator Results](shots/gen-res.png){width: 50%;}
 
 ## Setup
 To set it up clone this repo to your computer
