@@ -1,11 +1,27 @@
 # Chord progression comparison
 ## About
-This project is a little webapp that compares given chord progressions to
-standard ones, like [I vi ii V](https://www.youtube.com/watch?v=MrTz5xjmso4)
-or [I V iv IV](https://www.youtube.com/watch?v=0mPAO0R8uuQ). It is meant to be
-used at class by my students, to facilitate harmonic analysis of popular songs.
-I will be adding a 'transpose' function so that they get a chord progression in
-a key given by them, and then use it for composing songs of their own.
+This project is a little webapp with two very basic tools for the study of
+harmony. There is a tool that compares a given chord progressions to a dict
+with standard ones, like [I vi ii V](https://www.youtube.com/watch?v=MrTz5xjmso4)
+or [I V iv IV](https://www.youtube.com/watch?v=0mPAO0R8uuQ). The dictionary is
+made by hand, using examples from [this forum
+discussion](https://www.hispasonic.com/foros/armonia-pop-para-torpes/501174).
+Any suggestion is welcome!
+
+The other tool is a 'chord progression generator'. It lets the user select from
+all the available progressions on the dictionary mentioned above and transpose
+said progression to a given key. The goal is to make it easier to transpose a
+chord progression you already know you like to a confortable key for your vocal
+register.
+
+This app was originally made to be used by my highschool students, and so it is
+completely in valencian. Here are some pics:
+
+![Home Page](shots/home.png)
+![Analyzer Explanation](shots/an-expl.png)
+![Analyzer Results](shots/an-res.png)
+![Generator Explanation](shots/gen-expl.png)
+![Generator Results](shots/gen-res.png)
 
 ## Setup
 To set it up clone this repo to your computer
