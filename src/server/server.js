@@ -49,6 +49,19 @@ app.post('/gen_prog', (req, res) => {
     });
 });
 
+app.post('/songs', (req, res) => {
+    const songs = spawn('python3', ['src/server/get_songs.py', req.body.prog]);
+
+    songs.stderr.on('data', data => {
+        console.log('Error: ' + data.toString());
+    });
+
+    songs.stdout.on('data', data => {
+        const parsed = data.toString();
+        res.send(JSON.stringify(parsed));
+    });
+});
+
 app.get('/', (req, res) => {
     res.sendFile('dist/index.html');
 });
