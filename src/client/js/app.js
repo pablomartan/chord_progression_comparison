@@ -26,7 +26,12 @@ const compareChordProg = async (e) => {
     })
     .then(result => result.json())
     
-    Client.updateUI(JSON.parse(chordProgressions));
+    if (chordProgressions == '[]') {
+        Client.updateUI(JSON.parse(chordProgressions));
+    } else {
+        window.alert(`No s'ha trobat cap progressió amb eixos acords...`);
+        throw new Error(`No matching progression`);
+    }
 };
 
 export {
