@@ -2,6 +2,7 @@ import { updateUI, displayTranspChords } from './js/updateUI'
 import { compareChordProg } from './js/app'
 import { getNotation, translateChords, notationMatchesInput } from './js/changeNotation'
 import { populateSelector, transposeProgression } from './js/chordGen'
+import { showExamples } from './js/showExamples'
 
 import vari from './styles/_variables.scss'
 import base from './styles/base.scss'
@@ -19,17 +20,19 @@ export {
     translateChords,
     notationMatchesInput,
     populateSelector,
-    transposeProgression
+    transposeProgression,
+    showExamples
 }
 
 const titleFirstWord = document.title.split(' ')[0];
-console.log(titleFirstWord);
 
 if (titleFirstWord == 'Comparació') {
     const input = document.getElementById('submit');
     input.addEventListener('click', compareChordProg);
 } else if (titleFirstWord == 'Generador') {
     const submit = document.getElementById('submit');
+    const select = document.getElementById('prog-selector');
     submit.addEventListener('click', transposeProgression);
+    select.addEventListener('click', showExamples);
     window.addEventListener('DOMContentLoaded', populateSelector);
 }
