@@ -10,6 +10,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('dist'));
 
+let wavPath;
+
 app.post('/find', (req, res) => {
     const result = spawn('python3', ['src/server/progs.py', req.body.prog]);
    
@@ -44,9 +46,20 @@ app.post('/gen_prog', (req, res) => {
     });
     
     generateProgression.stdout.on('data', data => {
-        const parsedData = data.toString();
-        res.send(parsedData);
+      const prog = data.toString();
+      const generateSounds = spawn('python3', ['src/server/chords_to_sound.py', prog, req.body.bpm])
+
+        generateSounds.stderr.on('data', data => {
+          console.log('Error: ' + data.toString());
+        });
+
+      generateSounds.stdout.on('data', data => {
+        wavPath = data.toString();
+        console.log(wavPath);
+        res.send(JSON.stringify(prog));
+      });
     });
+    
 });
 
 app.post('/songs', (req, res) => {
