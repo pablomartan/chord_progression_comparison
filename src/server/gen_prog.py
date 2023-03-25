@@ -3,20 +3,21 @@ import mingus.core.chords as chords
 import json
 import sys
 
+
 user_args = json.loads(sys.argv[1])
 
 
 def funct_to_names(prog, key):
     """
     Converts a given chord progression written in functional notation, and
-    passed as a space separated string into a list of lists, each inside list
+    passed as a space separated string into a list of strings, each string
     being the chord corresponding to the given function in the given key
     """
-    chord_list = prog.split(' ')
+    ls = prog.split()
     chord_names = []
 
-    for chord in progs.to_chords(chord_list, key):
-        chord_names.append(chords.determine(chord, key, True))
+    for funct in progs.to_chords(ls, key):
+        chord_names.append(chords.determine(funct, key, True)[0])
 
     return chord_names
 
