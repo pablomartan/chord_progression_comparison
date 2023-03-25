@@ -61,6 +61,8 @@ const populateSelector = async () => {
         option.innerText = prog;
         selector.appendChild(option);
     });
+  
+    Client.showExamples();
 };
 
 export {
