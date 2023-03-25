@@ -43,7 +43,6 @@ const getNotation = () => {
  * @param {String} chords: the chords input by the user
  */
 const notationMatchesInput = (not, chords) => {
-    chords = chords.split(' ');
     let keys;
     if (not == 'lat-not') {
         keys = Object.keys(latToAmDict);
@@ -96,15 +95,13 @@ const amToLat = chords => {
 
 /**
  * @description: translate chords between latin and american notation
- * @param {String} chords: a string with chords separated by a space
+ * @param {List} chords: a list of strings
  * @param {Number} opt: latin to american (0; default) or american to latin (1)
  */
 const translateChords = (chords, opt) => {
     opt = opt || 0;
-    const chordList = chords.split(' ');
 
-    const translated = opt ? amToLat(chordList) : latToAm(chordList);
-    return translated;
+    return opt ? amToLat(chords) : latToAm(chords);
 };
 
 export {
