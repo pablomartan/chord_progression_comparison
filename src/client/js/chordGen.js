@@ -7,8 +7,9 @@ const transposeProgression = async e => {
 
     const selector = document.getElementById('prog-selector');
     const keyInput = document.getElementById('key');
+    const bpm = 120;
     const prog = selector.value;
-    let key = keyInput.value;
+    let key = [keyInput.value];
     const notation = Client.getNotation();
 
     if (Client.notationMatchesInput(notation, key) == 0) {
@@ -18,7 +19,8 @@ const transposeProgression = async e => {
 
     const body = {
         'prog': prog,
-        'key': key
+        'key': key,
+        'bpm': bpm
     };
 
     const transposed = await fetch('http://localhost:8081/gen_prog', {
@@ -30,15 +32,16 @@ const transposeProgression = async e => {
         body: JSON.stringify(body)
     })
     .then(data => data.json())
-    .then(chordList => chordList.join(' '))
     
+    const chordList = JSON.parse(transposed);
+
     let chordsInUserNotation;
     if (notation == 'lat-not') {
-        chordsInUserNotation = Client.translateChords(transposed, 1).join(' ');
+        chordsInUserNotation = Client.translateChords(chordList, 1).join(' ');
     } else {
-        chordsInUserNotation = transposed;
+        chordsInUserNotation = chordList;
     }
-    
+
     Client.displayTranspChords(chordsInUserNotation.replace(/\B[M\s]/g, ' '));
 };
 
