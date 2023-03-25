@@ -23,10 +23,14 @@ const getExamples = async prog => {
  * @param {Event} e: the click event
  */
 const showExamples = async e => {
+  const progSelector = document.getElementById('prog-selector');
+  let prog = progSelector[0].value;
+  if (e !== undefined) {
     e.preventDefault();
-    const prog = e.srcElement.value;
+    prog = e.srcElement.value 
+  }
+  try {
     const songs = await getExamples(prog);
-    
     if (document.getElementById('songlist-container') == undefined) {
         const newDiv = document.createElement('div');
         newDiv.id = 'songlist-container';
@@ -50,6 +54,11 @@ const showExamples = async e => {
         li.innerHTML = `<span class="artist">${pair[0]}</span>, <span class="song">${pair[1]}</span>`;
         songList.appendChild(li);
     });
+  } catch (e) {
+    console.log('Trying to get examples from the server, in function Client.showExamples()');
+    console.log(e);
+  }
+    
 };
 
 export {
