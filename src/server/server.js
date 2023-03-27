@@ -54,12 +54,21 @@ app.post('/gen_prog', (req, res) => {
         });
 
       generateSounds.stdout.on('data', data => {
-        wavPath = data.toString();
-        console.log(wavPath);
+        wavPath = data.toString().replace(/\n/, '').trim();
         res.send(JSON.stringify(prog));
       });
     });
     
+});
+
+app.get('/get_sample', (req, res) => {
+  res.sendFile(wavPath, null, (err) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('Sent ' + wavPath);
+    }
+  });
 });
 
 app.post('/songs', (req, res) => {
