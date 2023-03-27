@@ -1,4 +1,44 @@
 /**
+ * @description: get chord sound file from server
+ * @returns: wave sound file
+ */
+const getChordSample = async () => {
+  await fetch('http://localhost:8081/get_sample')
+  .then(async res => {
+    const oldAudio = document.getElementById('sample');
+    
+    if (oldAudio != null) {
+      document.getElementById('audio-button').remove();
+      oldAudio.remove();
+    }
+
+    const blob = await res.blob();
+    const newFile = new File([blob], 'chords.wav');
+    const button = document.createElement('button');
+    const cont = document.getElementById('gen-chords');
+
+    button.id = 'audio-button';
+    button.innerText = 'Escolta!';
+    button.onclick = () => {
+      const aud = document.getElementById('sample');
+      aud.play();
+    };
+    cont.appendChild(button);
+
+    const reader = new FileReader();
+    reader.onload = function() {
+      const str = this.result;
+      console.log(str);
+      const aud = new Audio(str);
+      aud.id = 'sample';
+      cont.appendChild(aud);
+    };
+
+    reader.readAsDataURL(newFile);
+  });
+};
+
+/**
  * @description: get selected progression and key, and send it to the server
  * for processing
  */
@@ -7,7 +47,7 @@ const transposeProgression = async e => {
 
     const selector = document.getElementById('prog-selector');
     const keyInput = document.getElementById('key');
-    const bpm = 120;
+    const bpm = 180;
     const prog = selector.value;
     let key = [keyInput.value];
     const notation = Client.getNotation();
@@ -43,6 +83,7 @@ const transposeProgression = async e => {
     }
 
     Client.displayTranspChords(chordsInUserNotation.replace(/\B[M\s]/g, ' '));
+    getChordSample();
 };
 
 /**
@@ -67,5 +108,5 @@ const populateSelector = async () => {
 
 export {
     populateSelector,
-    transposeProgression
+    transposeProgression,
 }
