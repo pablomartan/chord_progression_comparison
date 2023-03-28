@@ -43,7 +43,6 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: './src/client/html/prog_analyzer.html',
             filename: './prog_analyzer.html'
-        }),
-        new WorkboxPlugin.GenerateSW()
+        })
     ]
 }
