@@ -33,6 +33,6 @@ if (titleFirstWord == 'Comparació') {
     const submit = document.getElementById('submit');
     const select = document.getElementById('prog-selector');
     submit.addEventListener('click', transposeProgression);
-    select.addEventListener('click', showExamples);
+    select.onchange = showExamples;
     window.addEventListener('DOMContentLoaded', populateSelector);
 }
