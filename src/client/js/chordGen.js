@@ -1,4 +1,24 @@
 /**
+ * @description: create audio element and button to play the chord progression
+ * sample
+ */
+const addSample = (prog, key) => {
+  if (document.getElementById('sample') != null) {
+    document.getElementById('sample').remove();
+    document.getElementById('sample-button').remove();
+  }
+  const aud = new Audio(`http://localhost:8081/samples/${key}/${prog.replace(/ /g, '-')}.oga`)
+  aud.id = 'sample';
+  const button = document.createElement('button');
+  button.id = 'sample-button';
+  button.innerText = 'Escolta!';
+  button.onclick = aud.play();
+  const progCont = document.getElementById('gen-chords');
+  progCont.appendChild(aud);
+  progCont.appendChild(button);
+};
+
+/**
  * @description: get selected progression and key, and send it to the server
  * for processing
  */
@@ -40,6 +60,7 @@ const transposeProgression = async e => {
     }
     
     Client.displayTranspChords(chordsInUserNotation.replace(/\B[M\s]/g, ' '));
+    addSample(prog, key);
 };
 
 /**
