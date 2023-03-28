@@ -103,8 +103,7 @@ const translateChords = (chords, opt) => {
     opt = opt || 0;
     const chordList = chords.split(' ');
 
-    const translated = opt ? amToLat(chordList) : latToAm(chordList);
-    return translated;
+    return opt ? amToLat(chordList) : latToAm(chordList);
 };
 
 export {
