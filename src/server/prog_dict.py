@@ -1,6 +1,5 @@
 chord_progs = {
-        "I V vi IV": [("Enrique Iglesias", "Bailando"),
-                      ("Bob Marley", "No woman no cry"),
+        "I V vi IV": [("Bob Marley", "No woman no cry"),
                       ("The Beatles", "Let it be")],
         "I ii vi IV": [("Beyonce", "Halo"),
                        ("Rihanna", "Stay"),
@@ -12,7 +11,8 @@ chord_progs = {
         "I vi IV V": [("Ben E. King", "Stand By Me"),
                       ("Sean Kingston", "Beautiful girls"),
                       ("Justin Bieber", "Baby")],
-        "I IV V IV": [("Ritchie Valens", "La bamba")],
+        "I IV V IV": [("Ritchie Valens", "La bamba"),
+                      ("The Beatles", "Twist and shout")],
         "I V ii IV": [("Hot n cold", "Katy Perry"),
                       ("Lady Gaga", "Eh Eh"),
                       ("On my way", "Charlie Brown"),
@@ -26,5 +26,6 @@ chord_progs = {
                                  ("David Bowie", "Changes")],
         "V IV I": [("Guns 'n' roses", "Sweet child o mine"),
                    ("The eagles", "Sweet home, Alabama")],
-        "vi IV I V": [("Red Hot Chilly Peppers", "Snow")]
+        "vi IV I V": [("Enrique Iglesias", "Bailando"),
+                      ("Red Hot Chilly Peppers", "Snow")]
         }
