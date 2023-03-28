@@ -6,6 +6,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
     entry: './src/client/index.js',
     output: {
+        filename: './main.js',
         library: 'Client',
         libraryTarget: 'var'
     },
@@ -37,11 +38,11 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             template: './src/client/html/prog_generator.html',
-            filename: 'prog_generator.html'
+            filename: './prog_generator.html'
         }),
         new HtmlWebPackPlugin({
             template: './src/client/html/prog_analyzer.html',
-            filename: 'prog_analyzer.html'
+            filename: './prog_analyzer.html'
         }),
         new WorkboxPlugin.GenerateSW()
     ]
