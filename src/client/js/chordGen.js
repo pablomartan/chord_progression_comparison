@@ -7,7 +7,7 @@ const addSample = (prog, key) => {
     document.getElementById('sample').remove();
     document.getElementById('sample-button').remove();
   }
-  const aud = new Audio(`http://localhost:8081/samples/${key}/${prog.replace(/ /g, '-')}.oga`)
+  const aud = new Audio(`http://localhost:8081/samples/${key}/${prog.replace(/ /g, '-')}.mp3`)
   aud.id = 'sample';
   const button = document.createElement('button');
   button.id = 'sample-button';
