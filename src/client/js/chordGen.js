@@ -12,7 +12,7 @@ const addSample = (prog, key) => {
   const button = document.createElement('button');
   button.id = 'sample-button';
   button.innerText = 'Escolta!';
-  button.onclick = aud.play();
+  button.onclick = aud.play;
   const progCont = document.getElementById('gen-chords');
   progCont.appendChild(aud);
   progCont.appendChild(button);
