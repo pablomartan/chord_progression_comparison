@@ -5,6 +5,8 @@
  */
 const compareChordProg = async (e) => {
     e.preventDefault();
+    const baseUrl = window.location.origin;
+    const url = baseUrl.match(/martan/) ? `${baseUrl}/acords` : '';
 
     const notation = Client.getNotation();
     const userProg = document.getElementById('chord-input').value.trim();
@@ -16,7 +18,7 @@ const compareChordProg = async (e) => {
     let body;
     notation == 'lat-not' ? body = { prog: Client.translateChords(userProg) } : body = { prog: userProg }
     
-    const chordProgressions = await fetch('/find', {
+    const chordProgressions = await fetch(url + '/find', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {

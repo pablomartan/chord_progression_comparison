@@ -4,8 +4,10 @@
  */
 const getExamples = async prog => {
     const body = {'prog': prog};
+    const baseUrl = window.location.origin;
+    const url = baseUrl.match(/martan/) ? `${baseUrl}/acords` : '';
     
-    const songs = await fetch('/songs', {
+    const songs = await fetch(url + '/songs', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {

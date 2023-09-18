@@ -24,6 +24,8 @@ const addSample = (prog, key) => {
  */
 const transposeProgression = async e => {
     e.preventDefault();
+    const baseUrl = window.location.origin;
+    const url = baseUrl.match(/martan/) ? `${baseUrl}/acords` : '';
 
     const selector = document.getElementById('prog-selector');
     const keyInput = document.getElementById('key');
@@ -41,7 +43,7 @@ const transposeProgression = async e => {
         'key': key
     };
 
-    const transposed = await fetch('/gen_prog', {
+    const transposed = await fetch(url + '/gen_prog', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -67,7 +69,7 @@ const transposeProgression = async e => {
  * @description: populate the selector for chord progressions
  */
 const populateSelector = async () => {
-    const progDict = await fetch('/get_prog')
+    const progDict = await fetch(url + '/get_prog')
                     .then(data => data.json());
 
     const progList = JSON.parse(progDict);
