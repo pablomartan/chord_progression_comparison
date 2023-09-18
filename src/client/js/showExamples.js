@@ -5,7 +5,7 @@
 const getExamples = async prog => {
     const body = {'prog': prog};
     
-    const songs = await fetch('http://localhost:8081/songs', {
+    const songs = await fetch('/songs', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {

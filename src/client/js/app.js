@@ -16,7 +16,7 @@ const compareChordProg = async (e) => {
     let body;
     notation == 'lat-not' ? body = { prog: Client.translateChords(userProg) } : body = { prog: userProg }
     
-    const chordProgressions = await fetch('http://localhost:8081/find', {
+    const chordProgressions = await fetch('/find', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {

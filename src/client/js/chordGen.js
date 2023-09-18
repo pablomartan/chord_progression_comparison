@@ -12,7 +12,7 @@ const addSample = (prog, key) => {
   const button = document.createElement('button');
   button.id = 'sample-button';
   button.innerText = 'Escolta!';
-  button.onclick = aud.play;
+  button.onclick = () => aud.play;
   const progCont = document.getElementById('gen-chords');
   progCont.appendChild(aud);
   progCont.appendChild(button);
@@ -41,7 +41,7 @@ const transposeProgression = async e => {
         'key': key
     };
 
-    const transposed = await fetch('http://localhost:8081/gen_prog', {
+    const transposed = await fetch('/gen_prog', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -67,7 +67,7 @@ const transposeProgression = async e => {
  * @description: populate the selector for chord progressions
  */
 const populateSelector = async () => {
-    const progDict = await fetch('http://localhost:8081/get_prog')
+    const progDict = await fetch('/get_prog')
                     .then(data => data.json());
 
     const progList = JSON.parse(progDict);
