@@ -1,57 +1,46 @@
-# Chord progression comparison
-## About
-This project is a little webapp with two very basic tools for the study of
-harmony. There is a tool that compares a given chord progressions to a dict
-with standard ones, like [I vi ii V](https://www.youtube.com/watch?v=MrTz5xjmso4)
-or [I V iv IV](https://www.youtube.com/watch?v=0mPAO0R8uuQ). The dictionary is
-made by hand, using examples from [this forum
-discussion](https://www.hispasonic.com/foros/armonia-pop-para-torpes/501174).
-Any suggestion is welcome!
+# Getting Started with Create React App
 
-The other tool is a 'chord progression generator'. It lets the user select from
-all the available progressions on the dictionary mentioned above and transpose
-said progression to a given key. The goal is to make it easier to transpose a
-chord progression you already know you like to a confortable key for your vocal
-register.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This app was originally made to be used by my highschool students, and so it is
-completely in valencian. Here are some pics:
+## Available Scripts
 
-<img alt="Home Page" src="https://github.com/pablomartan/chord_progression_comparison/raw/main/shots/home.png" width=50% />
-<img alt"Analyzer Explanation" src="https://github.com/pablomartan/chord_progression_comparison/raw/main/shots/an-expl.png" width=50% />
-<img alt="Analyzer Results" src="https://github.com/pablomartan/chord_progression_comparison/raw/main/shots/an-res.png" width=50% />
-<img alt="Generator Explanation" src="https://github.com/pablomartan/chord_progression_comparison/raw/main/shots/gen-expl.png" width=50% />
-<img alt="Generator Results" src="https://github.com/pablomartan/chord_progression_comparison/raw/main/shots/gen-res.png" width=50% />
+In the project directory, you can run:
 
-## Setup
-To set it up clone this repo to your computer
-`git clone https://github.com/pablomartan/chord_progression_comparison`
+### `npm start`
 
-You will need [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/).
-Once you have them installed navigate to the repo you cloned this repo on and
-run the following command to install dependencies (Webpack and some plugins for
-it):
-`npm i`.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You will need a python environment. Refer to [this
-site](https://wiki.python.org/moin/BeginnersGuide/Download) if you don't know
-how to achieve it. If you use a GNU/Linux distro search your package manager
-for python3, altough it probably is already installed on you system. You will
-also need `pip` to install the [mingus library](https://github.com/bspaans/python-mingus).
-To install `pip` refer to its
-[docs](https://pip.pypa.io/en/stable/installation/). Once installed, you can
-get mingus by running `pip install mingus` on a terminal.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Once you have it set up you can run `npm run build-prod` and `npm start` to get
-a working example on `http://localhost:8081`. You can then access it on your
-web browser and start using it.
+### `npm test`
 
-If you would like to change the chord
-progressions, add examples, or simply play with the code, you can run `npm run
-build-dev` to get a dev server that reloads when you change the code for the
-project. If your browser doesn't navigate automatically to
-`http://localhost:8080` you can go manually. You'll need to run the server also
-with `npm start`.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## License
-All the code in this repo is licensed under the [GPLv3](./LICENSE) license.
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
